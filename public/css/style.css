@@ -1,0 +1,250 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(18px, 3vw, 28px);
+  font-weight: 500;
+  position: relative;
+}
+
+img {
+  max-width: 100%;
+}
+
+.flex-group {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+picture {
+  display: block;
+}
+picture img {
+  width: 100%;
+}
+@media screen and (min-width: 600px) {
+  picture img {
+    width: 30%;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+}
+@media screen and (min-width: 600px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    place-items: center;
+    height: 100vh;
+  }
+}
+
+.cards__front {
+  position: absolute;
+  z-index: 2;
+  top: 155px;
+  left: 40px;
+  max-width: 350px;
+}
+.cards__back {
+  position: relative;
+  z-index: 1;
+  top: 45px;
+  left: 100px;
+  max-width: 350px;
+}
+.cards__content--front {
+  position: absolute;
+  top: 10%;
+  left: 20px;
+  z-index: 3;
+}
+.cards__content--back {
+  position: absolute;
+  top: 42%;
+  right: 40px;
+  z-index: 3;
+}
+.cards__number {
+  letter-spacing: 5px;
+  font-size: 20px;
+  color: hsl(0, 0%, 100%);
+  font-size: clamp(18px, 3vw, 28px);
+  font-weight: 500;
+  margin-block: 30px;
+}
+.cards__holder {
+  color: hsl(0, 0%, 100%);
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: clamp(12px, 3vw, 18px);
+  text-transform: uppercase;
+}
+.cards__exp {
+  color: hsl(0, 0%, 100%);
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: clamp(12px, 3vw, 18px);
+}
+.cards__cvc {
+  color: hsl(0, 0%, 100%);
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: clamp(12px, 3vw, 18px);
+  margin-top: 3px;
+}
+@media screen and (min-width: 600px) {
+  .cards__front {
+    top: 130px;
+    left: 230px;
+    max-width: fit-content;
+  }
+  .cards__back {
+    top: 80px;
+    left: 180px;
+    max-width: fit-content;
+  }
+  .cards__number {
+    margin-block: 40px;
+  }
+  .cards__cvc {
+    margin-inline: 10px;
+  }
+}
+
+.form {
+  background-color: hsl(0, 0%, 100%);
+  margin-top: 15rem;
+  padding-inline: 30px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.form-label {
+  color: hsl(278, 68%, 11%);
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: clamp(12px, 3vw, 18px);
+  text-transform: uppercase;
+}
+.form-input {
+  width: 100%;
+  height: 50px;
+  border: 1px solid hsl(270, 3%, 87%);
+  border-radius: 10px;
+  margin-block: 10px;
+}
+.form-btn {
+  width: 100%;
+  height: 60px;
+  border: none;
+  border-radius: 8px;
+  background: hsl(278, 68%, 11%);
+  color: hsl(0, 0%, 100%);
+  font-weight: 500;
+  font-size: clamp(18px, 3vw, 28px);
+  letter-spacing: 2px;
+  margin-block: 2rem;
+  cursor: pointer;
+}
+@media screen and (min-width: 600px) {
+  .form {
+    margin-top: 0;
+    margin-inline: 8rem;
+  }
+}
+
+.container-completed {
+  text-align: center;
+  padding-inline: 30px;
+  margin-top: 15rem;
+  margin-inline: 4rem;
+}
+.container-completed__title {
+  color: hsl(278, 68%, 11%);
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-block: 20px;
+}
+.container-completed__text {
+  color: hsl(279, 6%, 55%);
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+@media screen and (min-width: 600px) {
+  .container-completed {
+    margin-top: 0;
+    margin-left: 8rem;
+  }
+}
+
+.error__text {
+  color: hsl(0, 100%, 66%);
+  font-size: clamp(12px, 3vw, 18px);
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.hidden {
+  display: none;
+}
+
+input {
+  font-size: clamp(18px, 3vw, 28px);
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: hsl(278, 68%, 11%);
+  padding-left: 10px;
+}
+input:focus {
+  outline: none;
+  border: 1px solid hsl(278, 94%, 30%);
+}
+input::placeholder {
+  color: hsl(270, 3%, 87%);
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: clamp(18px, 3vw, 28px);
+  padding-inline: 10px;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+/* Chrome, Safari, Edge */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  --moz-appearance: textfield;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/*# sourceMappingURL=style.css.map */

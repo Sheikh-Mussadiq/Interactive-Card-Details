@@ -1,0 +1,285 @@
+// Utilities 
+$primary-gradient-color: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+$primary-red: hsl(0, 100%, 66%);
+$White: hsl(0, 0%, 100%);
+$Light-grayish-violet: hsl(270, 3%, 87%);
+$Dark-grayish-violet: hsl(279, 6%, 55%);
+$Very-dark-violet: hsl(278, 68%, 11%);
+
+$fs-regular: clamp(18px, 3vw, 28px);
+$fs-small: clamp(12px, 3vw, 18px);
+
+$fw-regular: 500;
+$fw-bold: 700;
+
+$ff-regular: 'Space Grotesk', sans-serif;
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $ff-regular;
+    font-size: $fs-regular;
+    font-weight: $fw-regular;
+    position: relative;
+}
+img {
+    max-width: 100%;
+}
+.flex-group {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+picture {
+    display: block;
+
+    img {
+        width: 100%;
+    }
+
+    @media screen and (min-width: 600px) {
+        img {
+            width: 30%;
+        }
+        
+    }
+}
+.container {
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+
+    @media screen and (min-width: 600px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        place-items: center;
+        height: 100vh;
+    }
+}
+
+.cards {
+   
+    &__front {
+        position: absolute;
+        z-index: 2;
+        top: 155px;
+        left: 40px;
+        max-width: 350px;
+    }
+
+    &__back {
+        position: relative;
+        z-index: 1;
+        top: 45px;
+        left: 100px;
+        max-width: 350px;
+        
+    }
+
+    &__content--front {
+        position: absolute;
+        top: 10%;
+        left: 20px;
+        z-index: 3;
+    }
+
+    &__content--back {
+        position: absolute;
+        top: 42%;
+        right: 40px;
+        z-index: 3;
+    }
+
+    &__number {
+        letter-spacing: 5px;
+        font-size: 20px;
+        color: $White;
+        font-size: $fs-regular;
+        font-weight: $fw-regular;
+        margin-block: 30px;
+    }
+
+    &__holder {
+        color: $White;
+        font-weight: $fw-regular;
+        letter-spacing: 1px;
+        font-size: $fs-small;
+        text-transform: uppercase;
+    }
+
+    &__exp {
+        color: $White;
+        font-weight: $fw-regular;
+        letter-spacing: 1px;
+        font-size: $fs-small;
+    }
+
+    &__cvc {
+        color: $White;
+        font-weight: $fw-regular;
+        letter-spacing: 1px;
+        font-size: $fs-small;
+        margin-top: 3px;
+    }
+
+    @media screen and (min-width: 600px) {
+        &__front {
+            top: 130px;
+            left: 230px;
+            max-width: fit-content;
+        }
+        &__back {
+            top: 80px;
+            left: 180px;
+            max-width: fit-content;
+        }
+        &__number {
+            margin-block: 40px;
+        }
+        &__cvc {
+            margin-inline: 10px;
+        }
+    }
+}
+
+.form {
+    background-color: $White;
+    margin-top: 15rem;
+    padding-inline: 30px;
+
+    &-group {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 20px;
+    }    
+    &-label {
+        color: $Very-dark-violet;
+        font-weight: $fw-bold;
+        letter-spacing: 2px;
+        font-size: $fs-small;
+        text-transform: uppercase;
+    }
+    &-input {
+        width: 100%;
+        height: 50px;
+        border: 1px solid $Light-grayish-violet;
+        border-radius: 10px;
+        margin-block: 10px;
+    }
+    &-btn {
+        width: 100%;
+        height: 60px;
+        border: none;
+        border-radius: 8px;
+        background: $Very-dark-violet;
+        color: $White;
+        font-weight: $fw-regular;
+        font-size: $fs-regular;
+        letter-spacing: 2px;
+        margin-block: 2rem;
+        cursor: pointer;
+    }
+
+    @media screen and (min-width: 600px) {
+        margin-top: 0;
+        margin-inline: 8rem;
+    }
+    
+}
+.container-completed {
+    text-align: center;
+    padding-inline: 30px;
+    margin-top: 15rem;
+    margin-inline: 4rem;
+
+    &__title {
+        color: $Very-dark-violet;
+        font-weight: $fw-bold;
+        letter-spacing: 2px;
+        margin-block: 20px;
+    }
+
+    &__text {
+        color: $Dark-grayish-violet;
+        font-weight: $fw-regular;
+        letter-spacing: 1px;
+    }
+    @media screen and (min-width: 600px) {
+        margin-top: 0;
+        margin-left: 8rem;
+    }
+}
+.error__text {
+    color: $primary-red;
+    font-size: $fs-small;
+    font-weight: $fw-regular;
+    letter-spacing: 1px;
+}
+
+.hidden {
+    display: none;
+}
+input {
+    font-size: $fs-regular;
+    font-weight: $fw-regular;
+    letter-spacing: 1px;
+    color: $Very-dark-violet;
+    padding-left: 10px;
+
+    &:focus {
+        outline: none;
+        border: 1px solid  hsl(278, 94%, 30%);
+    }
+
+    &::placeholder {
+        color: $Light-grayish-violet;
+        font-weight: $fw-regular;
+        letter-spacing: 1px;
+        font-size: $fs-regular;
+        padding-inline: 10px;
+        font-family: $ff-regular;
+    }
+}
+  /* Chrome, Safari, Edge */
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }
+
+  /* Firefox */
+  input[type="number"] {
+      --moz-appearance: textfield;
+  }
+
+
+    
+
+
+
+
+
+
+
+
+
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+
+    a { color:
+        hsl(228, 45%, 44%); 
+    }
+}
